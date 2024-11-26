@@ -1,22 +1,21 @@
-import re
-
-
-def find_floor():
-    file = open(r"C:\Users\dande\Desktop\input.txt", "r")
-    lines = file.readlines()
-    file.close()
-    sum = 0
+def find_floor(lines):
+    #file = open(r"input.txt", "r")
+    #lines = file.readlines()
+    #file.close()
+    lines = input()
+    floor = 0
     for line in lines:
         for element in line:
             if element == ('('):
-                sum += 1
+                floor += 1
             if element == (')'):
-                sum -= 1
-        print(sum)
+                floor -= 1
+    return floor
 
 
 def main():
-    print(find_floor(input()))
+    lines = input()
+    print(find_floor(lines))
 
 
 if __name__ == '__main__':
