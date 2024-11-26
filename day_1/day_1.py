@@ -1,21 +1,16 @@
-def find_floor(lines):
-    #file = open(r"input.txt", "r")
-    #lines = file.readlines()
-    #file.close()
-    lines = input()
+def find_floor(line):
     floor = 0
-    for line in lines:
-        for element in line:
-            if element == ('('):
-                floor += 1
-            if element == (')'):
-                floor -= 1
+    for element in line:
+        if element == ('('):
+            floor += 1
+        if element == (')'):
+            floor -= 1
     return floor
 
 
 def main():
-    lines = input()
-    print(find_floor(lines))
+    line = input()
+    print(find_floor(line))
 
 
 if __name__ == '__main__':

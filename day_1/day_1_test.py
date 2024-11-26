@@ -2,8 +2,8 @@ import pytest
 
 from day_1 import find_floor
 
-def test_solve1(puzzle=0):
-    assert puzzle == find_floor("(())")
+def test_solve1():
+    assert 0 == find_floor("(())")
 
 def test_solve2():
     assert 0 == find_floor("()()")
