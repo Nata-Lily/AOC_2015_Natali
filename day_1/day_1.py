@@ -1,14 +1,15 @@
+#! /usr/bin/env python
 def find_floor(line):
     floor = 0
-    for element in line:
-        if element == '(':
+    for instruction in line:
+        if instruction == '(':
             floor += 1
-        if element == ')':
+        if instruction == ')':
             floor -= 1
     return floor
 
 
-def first_down_basement(line):
+def first_descent_into_the_basement(line):
     floor = 0
     for index in range(len(line)):
         if line[index] == '(':
@@ -21,9 +22,10 @@ def first_down_basement(line):
 
 def main():
     line = input()
+    print('The floor Santa ends up on', find_floor(line))
     print(
-        find_floor(line),
-        f'first_down_basement = {first_down_basement(line)}'
+        'When Santa descends into the basement',
+        first_descent_into_the_basement(line)
     )
 
 

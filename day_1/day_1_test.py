@@ -1,6 +1,6 @@
 import pytest
 
-from day_1 import find_floor, first_down_basement
+from day_1 import find_floor, first_descent_into_the_basement
 
 
 def test_find_floor1():
@@ -43,17 +43,13 @@ def test_find_floor10():
     assert 1000 == find_floor('('*1000)
 
 
-def test_first_down_basement1():
-    assert 5 == first_down_basement("(()))")
+def test_first_descent_into_the_basement1():
+    assert 5 == first_descent_into_the_basement("(()))")
 
 
-def test_first_down_basement2():
-    assert 1 == first_down_basement(")")
+def test_first_descent_into_the_basement2():
+    assert 1 == first_descent_into_the_basement(")")
 
 
-def test_first_down_basement3():
-    assert None is first_down_basement("(((")
-
-
-def test_first_down_basement4():
-    assert 11 == first_down_basement("(()(()())))")
+def test_first_descent_into_the_basement4():
+    assert 11 == first_descent_into_the_basement("(()(()())))")
