@@ -5,12 +5,12 @@ import re
 
 
 def find_square_wrapping_paper(puzzle):
-    new = []
-    for line in puzzle:
-        new.append(line.split('x'))
+    puzzle_line = []
+    for line in puzzle.splitlines():
+        puzzle_line.append(line.split('x'))
     c = []
-    for i in range(len(new)):
-        for el in new[i]:
+    for i in range(len(puzzle_line)):
+        for el in puzzle_line[i]:
             c.append(int(el))
     res = [c[i:i+3] for i in range(0, len(c), 3)]
     result = []
@@ -30,14 +30,15 @@ def find_square_wrapping_paper(puzzle):
 def main():
     """
     Read the data from a file, solve it and print the answer.
-    File name is input.txt by default or the first argument to the program.
+    File name is input_day_2.txt by default or the first argument to the command:
+    'python day_2.py File_name'.
     """
     filename = 'input_day_2.txt'
     import sys
     if len(sys.argv) > 1:
         filename = sys.argv[1]
     with open(filename) as file:
-        puzzle = file.read().splitlines()
+        puzzle = file.read()
         print(
             'We need',
             find_square_wrapping_paper(puzzle),
