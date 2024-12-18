@@ -13,3 +13,9 @@ def test_find_square_wrapping_paper2():
 
 def test_find_square_wrapping_paper3():
     assert 7 == find_square_wrapping_paper("1x1x1")
+
+
+def test_find_square_wrapping_paper4():
+    assert 216 == find_square_wrapping_paper(
+        "2x3x4\n1x1x10\n1x1x1\n2x3x4\n1x1x10\n1x1x1"
+    )

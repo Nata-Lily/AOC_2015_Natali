@@ -4,11 +4,9 @@ import functools
 import re
 
 
-def find_square_wrapping_paper(file):
-   # file = open(r"C:\Users\dande\Desktop\input_day_2.txt", "r")
-    lines = file.splitlines()
+def find_square_wrapping_paper(puzzle):
     new = []
-    for line in lines:
+    for line in puzzle:
         new.append(line.split('x'))
     c = []
     for i in range(len(new)):
@@ -26,12 +24,25 @@ def find_square_wrapping_paper(file):
     for i in range(len(min_wrapping_paper)):
         min_wrapping_paper_result.append(min(min_wrapping_paper[i]))
 
-    return sum(result) * 2 + sum(min_wrapping_paper_result)
+    return (sum(result) * 2 + sum(min_wrapping_paper_result))
 
 
 def main():
-    file = input()
-    print('We need', find_square_wrapping_paper(file),'feets of wrapping paper')
+    """
+    Read the data from a file, solve it and print the answer.
+    File name is input.txt by default or the first argument to the program.
+    """
+    filename = 'input_day_2.txt'
+    import sys
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+    with open(filename) as file:
+        puzzle = file.read().splitlines()
+        print(
+            'We need',
+            find_square_wrapping_paper(puzzle),
+            'feets of wrapping paper'
+        )
 
 
 if __name__ == '__main__':
