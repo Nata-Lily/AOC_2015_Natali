@@ -9,9 +9,9 @@ def find_square_wrapping_paper(puzzle):
     for line in puzzle.splitlines():
         puzzle_line.append(line.split('x'))
     c = []
-    for i in range(len(puzzle_line)):
-        for el in puzzle_line[i]:
-            c.append(int(el))
+    # for i in range(len(puzzle_line)):
+    for el in puzzle_line:
+        c.append(int(el))
     res = [c[i:i+3] for i in range(0, len(c), 3)]
     result = []
     for i in range(len(res)):
